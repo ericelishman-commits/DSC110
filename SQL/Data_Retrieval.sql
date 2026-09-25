@@ -1,6 +1,9 @@
 --For this exercise, we'll do it at sqliteonline.com
 
 -- Create Patients table
+--This creates a table, primary key means it will be unique. The follwing lines are va;uable information pertaining to each patient
+--Null means must be filled--
+--
 CREATE TABLE Patients (
     patient_id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
@@ -10,6 +13,7 @@ CREATE TABLE Patients (
 );
 
 -- Insert sample data into Patients
+--Command insert to and then table name, followed by format/ values / then each of the patiesnts data in its own brackets, seperated by commas. 
 INSERT INTO Patients (patient_id, name, age, gender, city) VALUES
 (1, 'John Doe', 45, 'M', 'Boston'),
 (2, 'Jane Smith', 32, 'F', 'Cambridge'),
@@ -19,10 +23,11 @@ INSERT INTO Patients (patient_id, name, age, gender, city) VALUES
 (6, 'Emily Davis', 67, 'F', 'Cambridge');
 
 select * from Patients;
-
+-- This command will show all the data in table format. Each row represents a pt. 
 --------
 
 -- Create Visits table
+-- same as above, table is created here. 
 CREATE TABLE Visits (
     visit_id INTEGER PRIMARY KEY,
     patient_id INTEGER,
@@ -33,6 +38,7 @@ CREATE TABLE Visits (
 );
 
 -- Insert sample data into Visits
+--As ablove, data is provided and entered into the newly created table. each pt data should be in own (///) -- 
 INSERT INTO Visits (visit_id, patient_id, visit_date, diagnosis, cost) VALUES
 (101, 1, '2024-01-15', 'Hypertension', 150.00),
 (102, 1, '2024-03-20', 'Diabetes', 200.00),
@@ -44,12 +50,15 @@ INSERT INTO Visits (visit_id, patient_id, visit_date, diagnosis, cost) VALUES
 (109, 6, '2024-03-15', 'Hypertension', 150.00);
 
 SELECT * from Visits;
+--This will display the data ONLY from this new table. 
 
 
 select * from Patients;
+--displays every row,column from PT table. 
 
 --Specific rows/records
 select * from Patients where city = 'Boston';
+--Where command filters only PT's from just boston. 
 
 --Now select records for only Female patients
 
